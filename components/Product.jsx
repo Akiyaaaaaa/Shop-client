@@ -36,7 +36,6 @@ const Product = ({ product, onEdit, onDelete, onAddTransaction }) => {
         </div>
 
         <div className="hidden group-hover:flex flex-col absolute bottom-0 w-full z-10">
-          {/*this is the transaction button */}
           <CustomButton
             title="Check Out"
             containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
@@ -60,8 +59,6 @@ const Product = ({ product, onEdit, onDelete, onAddTransaction }) => {
           </div>
         </div>
       </div>
-
-      {/* <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} /> */}
     </div>
   );
 };

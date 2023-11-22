@@ -30,11 +30,8 @@ const ProductModal = ({
   return (
     <div className={`modal ${isOpen ? "block" : "hidden"}`}>
       <div className="modal-overlay"></div>
-
       <div className="modal-container bg-white w-full md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-        {/* Modal content */}
         <div className="modal-content py-4 text-left px-6">
-          {/* Modal header */}
           <div className="flex justify-between items-center pb-3">
             <p className="text-2xl font-bold">Create New Product</p>
             <button
@@ -56,8 +53,6 @@ const ProductModal = ({
               </svg>
             </button>
           </div>
-
-          {/* Modal body */}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2">

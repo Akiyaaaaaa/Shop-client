@@ -6,8 +6,7 @@ import React, { useEffect } from "react";
 const RouteGuard = () => {
   const router = useRouter();
   useEffect(() => {
-    // Check your authentication status here
-    const isAuthenticated = /* Your authentication logic */ false;
+    const isAuthenticated = false;
 
     if (!isAuthenticated) {
       router.push("/signin");

@@ -3,10 +3,8 @@ import axios from "@/api/axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Product from "./Product";
-// ... (previous imports)
 import ProductModal from "./ProductModal";
 import TransactionModal from "./TransactionModal";
-import RouteGuard from "./RouteGuard";
 
 const ProductContainer = ({ initialProducts }) => {
   const [products, setProducts] = useState(initialProducts);
@@ -51,7 +49,6 @@ const ProductContainer = ({ initialProducts }) => {
     try {
       const response = await axios.post("/product", productData);
       setProducts((prevProducts) => {
-        // Replace the existing product with the updated one in the state
         const updatedProducts = prevProducts.map((product) =>
           product.id === productData.id ? response.data.product : product
         );
@@ -86,9 +83,7 @@ const ProductContainer = ({ initialProducts }) => {
 
   const handleAddTransaction = async (transactionData) => {
     try {
-      // Make an API request to add a new transaction
       const response = await axios.post("/transaction", transactionData);
-      // Update the product list with the new transaction data
       setProducts((prevProducts) =>
         prevProducts.map((product) =>
           product.id === response.data.product_id
@@ -96,7 +91,6 @@ const ProductContainer = ({ initialProducts }) => {
             : product
         )
       );
-      // Close the transaction modal
       closeTransactionModal();
     } catch (error) {
       console.error("Error creating transaction:", error);
@@ -121,7 +115,6 @@ const ProductContainer = ({ initialProducts }) => {
           />
         </>
       )}
-
       {isTransactionModalOpen && (
         <>
           <TransactionModal
@@ -152,8 +145,7 @@ const ProductContainer = ({ initialProducts }) => {
             onAddTransaction={() => openTransactionModal(product)}
           />
         ))}
-      </div>
-      {/* Add pagination logic here */}
+      </div>{" "}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-// components/Transaction.js
 import React from "react";
 
 const Transaction = ({ transaction }) => {
@@ -38,7 +37,6 @@ const Transaction = ({ transaction }) => {
         <p className="text-[14px] leading-[17px]">Created At :</p>
         <p className="text-[14px] leading-[17px]">{createTime}</p>
       </div>
-      {/* <CarDetails isOpen={isOpen} closeModal={() => setIsOpen(false)} car={car} /> */}
     </div>
   );
 };
